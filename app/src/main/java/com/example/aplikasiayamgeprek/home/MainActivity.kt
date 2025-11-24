@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val email : String = intent.getStringExtra(LoginActivity.Companion.KEY_EMAIL).toString()
+        val username : String = intent.getStringExtra(LoginActivity.Companion.KEY_EMAIL).toString()
 
     }
 }
