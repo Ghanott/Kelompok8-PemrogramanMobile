@@ -15,4 +15,14 @@
         android:name="com.example.aplikasiayamgeprek.home.ChartFragment"
         android:label="fragment_chart"
         tools:layout="@layout/fragment_chart" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.aplikasiayamgeprek.home.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.aplikasiayamgeprek.home.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
