@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiAyamGeprek">
         <activity
+            android:name=".home.MenuAdapter"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
@@ -22,9 +25,7 @@
         </activity>
         <activity
             android:name=".home.MainActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false"></activity>
     </application>
 
 </manifest>

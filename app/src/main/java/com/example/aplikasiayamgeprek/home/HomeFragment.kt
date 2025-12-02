@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.aplikasiayamgeprek.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,8 +27,21 @@ class HomeFragment : Fragment(){
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
-        val title = view.findViewById<TextView>(R.id.textViewHome)
-        title.text = "ini adalah halaman home"
+
+        val rvMenu = view.findViewById<RecyclerView>(R.id.rvMenu)
+        rvMenu.layoutManager = GridLayoutManager(requireContext(), 2)
+
+        val listMenu = listOf(
+            MenuModel("Ayam Geprek", "10000", R.drawable.ayam_geprek),
+            MenuModel("Ayam Serundeng", "12000", R.drawable.ayam_goreng_serundeng)
+        )
+
+        val emailUser = arguments?.getString("email_user") ?: ""
+
+        val textHallo = view.findViewById<TextView>(R.id.tvHello)
+        textHallo.text = "Hallo, $emailUser"
+
+        rvMenu.adapter = MenuAdapter(listMenu)
         return view
 
     }

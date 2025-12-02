@@ -25,5 +25,12 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navController = findNavController(R.id.fragmentContainerView)
         bottomNavigationView.setupWithNavController(navController)
+
+        val bundle = Bundle()
+        bundle.putString("email_user", username)
+
+        navController.setGraph(R.navigation.nav_graph, bundle)
+
     }
 }
+
