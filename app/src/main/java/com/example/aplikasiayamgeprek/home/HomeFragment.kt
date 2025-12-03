@@ -37,7 +37,7 @@ class HomeFragment : Fragment(){
             MenuModel("Ayam Serundeng", "12000", R.drawable.ayam_goreng_serundeng)
         )
 
-        val emailUser = arguments?.getString(KEY_EMAIL) ?: ""
+        val emailUser = arguments?.getString("email_user") ?: ""
 
         val textHallo = view.findViewById<TextView>(R.id.tvHello)
         textHallo.text = "Hallo, $emailUser"
