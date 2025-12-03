@@ -31,7 +31,6 @@ class LoginActivity : AppCompatActivity() {
 
 
 
-
             val intentLogin = Intent(this, MainActivity::class.java)
             intentLogin.putExtra(KEY_EMAIL, email)
             startActivity(intentLogin)
@@ -41,6 +40,6 @@ class LoginActivity : AppCompatActivity() {
 
         }
     companion object {
-        const val KEY_EMAIL = "email"
+        const val KEY_EMAIL = "KEY_EMAIL"
     }
     }

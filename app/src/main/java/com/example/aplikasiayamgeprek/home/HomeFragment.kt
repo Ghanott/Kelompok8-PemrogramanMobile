@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.aplikasiayamgeprek.LoginActivity.Companion.KEY_EMAIL
+import com.example.aplikasiayamgeprek.LoginActivity
 import com.example.aplikasiayamgeprek.R
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,7 +38,8 @@ class HomeFragment : Fragment(){
             MenuModel("Ayam Serundeng", "12000", R.drawable.ayam_goreng_serundeng)
         )
 
-        val emailUser = arguments?.getString(KEY_EMAIL) ?: ""
+
+        val emailUser : String = requireActivity().intent.getStringExtra(LoginActivity.Companion.KEY_EMAIL).toString()
 
         val textHallo = view.findViewById<TextView>(R.id.tvHello)
         textHallo.text = "Hallo, $emailUser"
