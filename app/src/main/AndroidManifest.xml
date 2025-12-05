@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiAyamGeprek">
         <activity
+            android:name=".Adapter.Menu_Adapter"
+            android:exported="false" />
+        <activity
             android:name=".home.MenuAdapter"
             android:exported="false" />
         <activity
@@ -25,7 +28,7 @@
         </activity>
         <activity
             android:name=".home.MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
