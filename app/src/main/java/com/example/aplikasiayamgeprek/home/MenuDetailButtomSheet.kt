@@ -9,8 +9,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.example.aplikasiayamgeprek.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.example.aplikasiayamgeprek.home.ChartManager
+import com.example.aplikasiayamgeprek.home.ChartModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -69,8 +74,28 @@ class MenuDetailButtomSheet : BottomSheetDialogFragment() {
             }
         }
         btnAddToCart.setOnClickListener {
-            dismiss()
-            }
+
+            // Ambil total harga dalam angka
+            val basePrice = parsePrice(menu.price)
+            val totalPrice = basePrice * quantity
+
+            // Buat item keranjang
+            val item = ChartModel(
+                name = menu.name,
+                desc = menu.description,
+                price = basePrice,
+                image = menu.image,
+                qty = quantity
+            )
+
+            // Masukkan ke keranjang
+            ChartManager.addToChart(item)
+
+            dismiss()  // Tutup bottom sheet
+
+            val buttomNav = requireActivity().findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottomNavigationView)
+            buttomNav.selectedItemId = R.id.chartFragment
+        }
 
         return view
     }

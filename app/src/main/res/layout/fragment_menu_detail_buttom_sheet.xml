@@ -52,7 +52,9 @@
             android:gravity="center"
             android:text="-"
             android:textSize="18sp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_circle_orange"
+            />
 
 
         <TextView
@@ -71,7 +73,9 @@
             android:gravity="center"
             android:text="+"
             android:textSize="18sp"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_circle_orange"
+            />
 
 
         <TextView
