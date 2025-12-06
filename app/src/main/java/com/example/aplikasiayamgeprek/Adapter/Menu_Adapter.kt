@@ -16,7 +16,8 @@ import com.example.aplikasiayamgeprek.R
 import com.example.aplikasiayamgeprek.home.MenuModel
 
 class MenuAdapter(
-    private var listMenu: List<MenuModel>
+    private var listMenu: List<MenuModel>,
+    private val onItemClick: (MenuModel) -> Unit
 ) : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>(){
 
     class MenuViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -39,6 +40,10 @@ class MenuAdapter(
         holder.tvName.text = item.name
         holder.tvPrice.text = item.price
         holder.imgFood.setImageResource(item.image)
+
+        holder.itemView.setOnClickListener {
+            onItemClick(item)
+        }
     }
 
     override fun getItemCount(): Int = listMenu.size

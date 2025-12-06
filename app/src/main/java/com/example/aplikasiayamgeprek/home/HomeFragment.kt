@@ -15,6 +15,8 @@ import com.example.aplikasiayamgeprek.Adapter.MenuAdapter
 import com.example.aplikasiayamgeprek.LoginActivity
 import com.example.aplikasiayamgeprek.R
 import com.google.android.material.tabs.TabLayout
+import com.example.aplikasiayamgeprek.home.MenuDetailButtomSheet
+
 
 class HomeFragment : Fragment() {
 
@@ -45,12 +47,21 @@ class HomeFragment : Fragment() {
 
 
         fullMenuList = listOf(
-            MenuModel("Ayam Geprek",       "Rp. 10.000", "Makanan", R.drawable.ayam_geprek),
-            MenuModel("Ayam Bakar",       "Rp. 15.000", "Makanan", R.drawable.ayam_geprek),
-            MenuModel("Es Teh Manis",     "Rp. 5.000",  "Minuman", R.drawable.ayam_geprek),
-            MenuModel("Kentang Goreng",   "Rp. 8.000",  "Snacks",  R.drawable.ayam_geprek),
-            MenuModel("Jus Alpukat",      "Rp. 12.000", "Minuman", R.drawable.ayam_geprek),
-            MenuModel("Paket Geprek 10K", "Rp. 10.000", "Promo",   R.drawable.ayam_geprek),
+            MenuModel("Ayam Geprek",       "Rp. 10.000", "Makanan",
+                R.drawable.ayam_geprek,"1. Ayam Geprek \n2. nasi "),
+            MenuModel("Ayam Bakar",       "Rp. 15.000", "Makanan",
+                R.drawable.ayam_geprek,"1. Ayam Bakar  \n2. nasi "),
+            MenuModel("Ayam Geprek",       "Rp. 10.000", "Makanan",
+                R.drawable.ayam_geprek,"1. Ayam Geprek  \n2. nasi "),
+            MenuModel("Teh Asli Ngawi",       "Rp. 10.000", "Minuman",
+                R.drawable.ayam_geprek,"1. Teh Asli Ngawi "),
+            MenuModel("Kulit Ayam",       "Rp. 5.000", "Snacks",
+                R.drawable.ayam_geprek,"1. kulit Ayam"),
+            MenuModel("Ayam Paker Promo",       "Rp. 20.000", "Promo",
+                R.drawable.ayam_geprek,"1. Ayam Geprek (2)  \n2. nasi (2)" +
+                        " \n3. Teh Cap Bangkok (2)"),
+
+
         )
 
 
@@ -60,7 +71,10 @@ class HomeFragment : Fragment() {
         textHallo.text = "Hallo, $emailUser"
 
 
-        menuAdapter = MenuAdapter(fullMenuList)
+        menuAdapter = MenuAdapter(fullMenuList){ menu ->
+            val bottomSheet = MenuDetailButtomSheet.newInstance(menu)
+            bottomSheet.show(childFragmentManager, "MenuDetail")
+        }
         rvMenu.layoutManager = GridLayoutManager(requireContext(), 2)
         rvMenu.adapter = menuAdapter
 
