@@ -11,12 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiAyamGeprek">
-        <activity
-            android:name=".Adapter.Menu_Adapter"
-            android:exported="false" />
-        <activity
-            android:name=".home.MenuAdapter"
-            android:exported="false" />
+
         <activity
             android:name=".LoginActivity"
             android:exported="true">

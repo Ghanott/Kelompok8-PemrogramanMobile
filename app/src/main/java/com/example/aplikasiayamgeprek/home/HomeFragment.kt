@@ -49,17 +49,21 @@ class HomeFragment : Fragment() {
         fullMenuList = listOf(
             MenuModel("Ayam Geprek",       "Rp. 10.000", "Makanan",
                 R.drawable.ayam_geprek,"1. Ayam Geprek \n2. nasi "),
-            MenuModel("Ayam Bakar",       "Rp. 15.000", "Makanan",
-                R.drawable.ayam_geprek,"1. Ayam Bakar  \n2. nasi "),
-            MenuModel("Ayam Geprek",       "Rp. 10.000", "Makanan",
-                R.drawable.ayam_geprek,"1. Ayam Geprek  \n2. nasi "),
+            MenuModel("Ayam Geprek Matah",       "Rp. 15.000", "Makanan",
+                R.drawable.ayam_geprek_matah,"1. Ayam Geprek Matah  \n2. nasi "),
+            MenuModel("Ayam Geprek Indomie",       "Rp. 10.000", "Makanan",
+                R.drawable.ayam_geprek_indomie,"1. Ayam Geprek  \n2. Mie Indomie Goreng "),
             MenuModel("Teh Asli Ngawi",       "Rp. 10.000", "Minuman",
-                R.drawable.ayam_geprek,"1. Teh Asli Ngawi "),
+                R.drawable.sweet_tea,"1. Teh Asli Ngawi "),
             MenuModel("Kulit Ayam",       "Rp. 5.000", "Snacks",
-                R.drawable.ayam_geprek,"1. kulit Ayam"),
-            MenuModel("Ayam Paker Promo",       "Rp. 20.000", "Promo",
-                R.drawable.ayam_geprek,"1. Ayam Geprek (2)  \n2. nasi (2)" +
-                        " \n3. Teh Cap Bangkok (2)"),
+                R.drawable.kulit_ayam,"Kulit Ayam Krispy"),
+            MenuModel("Ayam Goreng Serundeng",       "Rp. 10.000", "Makanan",
+                R.drawable.ayam_goreng_serundeng,"1. Ayam Goreng Serundeng \n2. nasi"),
+            MenuModel("Ayam Paket Promo",       "Rp. 20.000", "Promo",
+                R.drawable.ayam_geprek_promo,"1. Ayam Geprek (2)  \n2. nasi (1) " +
+                        " \n3. Teh Cap Bangkok (1)"),
+            MenuModel("Ayam Kremes",       "Rp. 10.000", "Makanan",
+                R.drawable.ayam_kremes,"1. Ayam Kremes  \n2. nasi "),
 
 
         )
