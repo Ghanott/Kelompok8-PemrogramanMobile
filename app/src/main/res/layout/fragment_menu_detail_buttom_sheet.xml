@@ -46,7 +46,7 @@
 
 
         <TextView
-            android:id="@+id/btnMinus"
+            android:id="@+id/btnMinusDetail"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:gravity="center"
@@ -67,7 +67,7 @@
 
 
         <TextView
-            android:id="@+id/btnPlus"
+            android:id="@+id/btnPlusDetail"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:gravity="center"

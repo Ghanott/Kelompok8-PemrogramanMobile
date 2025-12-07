@@ -44,8 +44,8 @@ class MenuDetailButtomSheet : BottomSheetDialogFragment() {
         val tvDeskripsiProduk = view.findViewById<TextView>(R.id.tvDeskripsiProduct)
         val btnAddToCart = view.findViewById<Button>(R.id.btnAddToCart)
         val tvQty = view.findViewById<TextView>(R.id.tvQty)
-        val btnMinus = view.findViewById<TextView>(R.id.btnMinus)
-        val btnPlus = view.findViewById<TextView>(R.id.btnPlus)
+        val btnMinus = view.findViewById<TextView>(R.id.btnMinusDetail)
+        val btnPlus = view.findViewById<TextView>(R.id.btnPlusDetail)
 
 
         val menu = arguments?.getSerializable(MENU) as? MenuModel ?: return view

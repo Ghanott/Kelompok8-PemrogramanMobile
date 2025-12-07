@@ -7,13 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.aplikasiayamgeprek.adapter.MenuAdapter
 import com.example.aplikasiayamgeprek.LoginActivity
 import com.example.aplikasiayamgeprek.R
+import com.example.aplikasiayamgeprek.adapter.MenuAdapter
 import com.google.android.material.tabs.TabLayout
 
 
@@ -74,12 +75,28 @@ class HomeFragment : Fragment() {
         textHallo.text = "Hallo, $emailUser"
 
 
-        menuAdapter = MenuAdapter(fullMenuList){ menu ->
+        menuAdapter = MenuAdapter(fullMenuList) { menu ->
             val bottomSheet = MenuDetailButtomSheet.newInstance(menu)
             bottomSheet.show(childFragmentManager, "MenuDetail")
         }
         rvMenu.layoutManager = GridLayoutManager(requireContext(), 2)
         rvMenu.adapter = menuAdapter
+
+        val imgBanner = view.findViewById<ImageView>(R.id.imgBanner)
+
+        imgBanner.setOnClickListener {
+            val targetPromo = "Ayam Paket Promo"
+
+            val promoMenu = fullMenuList.firstOrNull { menu ->
+                menu.category.equals("Promo", ignoreCase = true) &&
+                        menu.name.equals(targetPromo, ignoreCase = true)
+            } ?: return@setOnClickListener
+
+            val bottomSheet = MenuDetailButtomSheet.newInstance(promoMenu)
+            bottomSheet.show(childFragmentManager, "PromoBanner")
+
+
+        }
 
 
         setupTabsWithCustomView()
