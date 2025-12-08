@@ -66,13 +66,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/ayam_goreng_serundeng"
+            android:src="@drawable/header"
             android:contentDescription="Promo Minggu Ini"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackgroundBorderless" />
     </androidx.cardview.widget.CardView>
-
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabKategori"
@@ -98,6 +97,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_home" />
 
-    
 
 </androidx.constraintlayout.widget.ConstraintLayout>
