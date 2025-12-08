@@ -11,7 +11,7 @@ import com.example.aplikasiayamgeprek.R
 import com.example.aplikasiayamgeprek.home.ChartManager
 
 
-class   ChartAdapter(
+class ChartAdapter(
     private val cartItems: MutableList<ChartModel>,
     private val onUpdate: () -> Unit
 ) : RecyclerView.Adapter<ChartAdapter.ViewHolder>() {
@@ -46,21 +46,24 @@ class   ChartAdapter(
 
         holder.btnPlus.setOnClickListener {
             ChartManager.increase(item)
-            notifyItemChanged(position)
+            notifyItemChanged(holder.bindingAdapterPosition)
             onUpdate()
         }
 
         holder.btnMinus.setOnClickListener {
             ChartManager.decrease(item)
-            notifyItemChanged(position)
+            notifyItemChanged(holder.bindingAdapterPosition)
             onUpdate()
         }
 
         holder.btnDelete.setOnClickListener {
-            ChartManager.removeItem(item)
-            notifyItemRemoved(position)
-            notifyItemRangeChanged(position, cartItems.size)
-            onUpdate()
+            val currentPosition = holder.bindingAdapterPosition
+            if (currentPosition != RecyclerView.NO_POSITION) {
+                ChartManager.removeItem(item)
+                notifyItemRemoved(currentPosition)
+                notifyItemRangeChanged(currentPosition, cartItems.size - currentPosition)
+                onUpdate()
+            }
         }
     }
 }

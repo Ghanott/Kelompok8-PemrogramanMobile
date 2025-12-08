@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aplikasiayamgeprek.R
 import com.example.aplikasiayamgeprek.adapter.ChartAdapter
+
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,6 +34,7 @@ class ChartFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_chart, container, false)
 //        val title = view.findViewById<TextView>(R.id.textViewChart)
+
 //        title.text = "ini adalah halaman chart"
         return view
     }
@@ -48,8 +52,16 @@ class ChartFragment : Fragment() {
         rvCart.adapter = adapter
 
         updateTotal(txtTotalPrice, txtTotalItems)
-    }
 
+        val btnBayar = view.findViewById<Button>(R.id.btnBayar)
+        btnBayar.text = "Bayar"
+
+        btnBayar.setOnClickListener {
+
+        }
+
+
+    }
     private fun updateTotal(price: TextView, items: TextView) {
         price.text = "Rp.${ChartManager.getTotalPrice()}"
         items.text = ChartManager.getTotalItems().toString()
