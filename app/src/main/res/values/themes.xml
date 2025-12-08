@@ -1,16 +1,9 @@
-<resources>
-
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
     <style name="Base.Theme.AplikasiAyamGeprek" parent="Theme.Material3.DayNight.NoActionBar">
-
-        <!-- Disable Material3 automatic button tint -->
-        <item name="materialButtonStyle">@style/NoTintButtonStyle</item>
-
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <!-- Style that removes tinting -->
-    <style name="NoTintButtonStyle" parent="Widget.Material3.Button">
-        <item name="backgroundTint">@null</item>
-        <item name="rippleColor">@android:color/transparent</item>
-    </style>
-
+    <style name="Theme.AplikasiAyamGeprek" parent="Base.Theme.AplikasiAyamGeprek" />
 </resources>
