@@ -64,7 +64,8 @@ class HomeFragment : Fragment() {
                         " \n3. Teh Cap Bangkok (1)"),
             MenuModel("Ayam Kremes",       "Rp. 10.000", "Makanan",
                 R.drawable.ayam_kremes,"1. Ayam Kremes  \n2. nasi "),
-
+            MenuModel("Ayam Geprek Josjis",       "Rp. 45.000", "Promo",
+                R.drawable.ayam_utuh,"1. Ayam Krispy Utuh 60grm (1)  \n2. Sayuran " ),
 
         )
 
@@ -85,7 +86,7 @@ class HomeFragment : Fragment() {
         val imgBanner = view.findViewById<ImageView>(R.id.imgBanner)
 
         imgBanner.setOnClickListener {
-            val targetPromo = "Ayam Paket Promo"
+            val targetPromo = "Ayam Geprek Josjis"
 
             val promoMenu = fullMenuList.firstOrNull { menu ->
                 menu.category.equals("Promo", ignoreCase = true) &&
