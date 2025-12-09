@@ -1,5 +1,6 @@
 package com.example.aplikasiayamgeprek.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,11 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.aplikasiayamgeprek.Pembayaran_Berhasil
 import com.example.aplikasiayamgeprek.R
 import com.example.aplikasiayamgeprek.adapter.ChartAdapter
-
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -57,6 +59,11 @@ class ChartFragment : Fragment() {
         btnBayar.text = "Bayar"
 
         btnBayar.setOnClickListener {
+
+            val intentPembayaranBerhasil = Intent(requireContext(), Pembayaran_Berhasil::class.java)
+            startActivity(intentPembayaranBerhasil)
+
+            Toast.makeText(requireContext(), "Pembelian Berhasil Cuyyy", Toast.LENGTH_SHORT).show()
 
         }
 

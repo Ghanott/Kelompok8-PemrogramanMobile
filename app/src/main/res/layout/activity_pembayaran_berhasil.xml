@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="24dp"
     android:gravity="center_horizontal"
@@ -87,16 +88,20 @@
     </LinearLayout>
 
     <!-- BUTTON BERANDA -->
-    <Button
-        android:id="@+id/btnContinue"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:background="@drawable/bg_button_white"
-        android:text="Kembali Beranda"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:textAllCaps="false"
-        android:textColor="#FF7A00"
-        android:layout_marginTop="30dp"
-        android:gravity="center"/>
+    <com.google.android.material.button.MaterialButton
+    android:id="@+id/btnContinue"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:background="@drawable/bg_button_white"
+    app:backgroundTint="@null"
+    app:strokeColor="@android:color/transparent"
+    app:rippleColor="@android:color/transparent"
+    android:text="Kembali Beranda"
+    android:textStyle="bold"
+    android:textSize="16sp"
+    android:textAllCaps="false"
+    android:textColor="#FF7A00"
+    android:layout_marginTop="30dp"
+    android:gravity="center"/>
+
 </LinearLayout>
