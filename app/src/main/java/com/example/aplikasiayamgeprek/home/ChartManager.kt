@@ -25,6 +25,10 @@ object ChartManager {
         if (item.qty > 1) item.qty--
     }
 
+    fun clear() {
+        chartList.clear()
+    }
+
     fun getCartItems() = chartList
 
     fun getTotalPrice(): Int = chartList.sumOf { it.price * it.qty }
