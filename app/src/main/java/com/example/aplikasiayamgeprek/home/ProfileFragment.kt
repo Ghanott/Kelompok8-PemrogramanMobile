@@ -1,10 +1,12 @@
 package com.example.aplikasiayamgeprek.home
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import com.example.aplikasiayamgeprek.LoginActivity
 import com.example.aplikasiayamgeprek.R
@@ -28,10 +30,20 @@ class ProfileFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
-        val usernameUser : String = requireActivity().intent.getStringExtra(LoginActivity.KEY_EMAIL).orEmpty()
+        val usernameUser : String = requireActivity().intent.getStringExtra(LoginActivity.KEY_USERNAME).orEmpty()
 
         val username = view.findViewById<TextView>(R.id.txtNamaUser)
         username.text = "Apa Kabar Kamu, $usernameUser"
+
+
+        val btnKeluar = view.findViewById<Button>(R.id.btnLogout)
+        btnKeluar.setOnClickListener{
+            val intent = Intent(requireContext(), LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            requireActivity().finish()
+        }
+
 
         return view
 

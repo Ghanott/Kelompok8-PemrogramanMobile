@@ -47,8 +47,6 @@ class Pembayaran_Berhasil : AppCompatActivity() {
 
     private fun goToHome() {
         val intentGoToHome = Intent(this, MainActivity::class.java)
-
-        intentGoToHome.putExtra("TARGET_FRAGMENT", R.id.homeFragment)
         startActivity(intentGoToHome)
         finish()
     }

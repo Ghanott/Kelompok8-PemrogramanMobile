@@ -70,10 +70,10 @@ class HomeFragment : Fragment() {
         )
 
 
-        val emailUser: String =
-            requireActivity().intent.getStringExtra(LoginActivity.KEY_EMAIL).orEmpty()
+        val username: String =
+            requireActivity().intent.getStringExtra(LoginActivity.KEY_USERNAME).orEmpty()
         val textHallo = view.findViewById<TextView>(R.id.tvHello)
-        textHallo.text = "Hallo, $emailUser"
+        textHallo.text = "Hallo, $username"
 
 
         menuAdapter = MenuAdapter(fullMenuList) { menu ->

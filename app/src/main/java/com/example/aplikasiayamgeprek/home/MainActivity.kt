@@ -21,13 +21,13 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
         }
-        val username : String = intent.getStringExtra(LoginActivity.Companion.KEY_EMAIL).toString()
+        val username : String = intent.getStringExtra(LoginActivity.Companion.KEY_USERNAME).toString()
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navController = findNavController(R.id.fragmentContainerView)
         bottomNavigationView.setupWithNavController(navController)
 
         val bundle = Bundle()
-        bundle.putString("email_user", username)
+        bundle.putString("username", username)
 
         navController.setGraph(R.navigation.nav_graph, bundle)
 
