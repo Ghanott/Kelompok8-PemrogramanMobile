@@ -60,6 +60,8 @@ class ChartFragment : Fragment() {
 
         btnBayar.setOnClickListener {
 
+            ChartManager.clear()
+
             val intentPembayaranBerhasil = Intent(requireContext(), Pembayaran_Berhasil::class.java)
             startActivity(intentPembayaranBerhasil)
 
