@@ -11,13 +11,15 @@
     <ImageView
         android:id="@+id/iconMenu"
         android:layout_width="24dp"
-        android:layout_height="24dp" />
+        android:layout_height="24dp"
+        android:src="@drawable/favorit" />
 
     <TextView
         android:id="@+id/txtMenuName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Favorit Saya"
+        android:textStyle="bold"
         android:layout_marginStart="12dp"
         android:layout_weight="1"
         android:textSize="15sp" />
@@ -25,5 +27,6 @@
     <ImageView
         android:layout_width="18dp"
         android:layout_height="18dp" />
+
 
 </LinearLayout>

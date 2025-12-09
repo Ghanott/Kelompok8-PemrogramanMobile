@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.example.aplikasiayamgeprek.LoginActivity
 import com.example.aplikasiayamgeprek.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,8 +27,12 @@ class ProfileFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
-        val title = view.findViewById<TextView>(R.id.textViewProfile)
-        title.text = "ini adalah halaman profile"
+
+        val usernameUser : String = requireActivity().intent.getStringExtra(LoginActivity.KEY_EMAIL).orEmpty()
+
+        val username = view.findViewById<TextView>(R.id.txtNamaUser)
+        username.text = "Apa Kabar Kamu, $usernameUser"
+
         return view
 
     }
