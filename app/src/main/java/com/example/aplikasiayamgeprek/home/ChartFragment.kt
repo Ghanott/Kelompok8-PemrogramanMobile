@@ -59,10 +59,42 @@ class ChartFragment : Fragment() {
         btnBayar.text = "Bayar"
 
         btnBayar.setOnClickListener {
+            val totalPrice = ChartManager.getTotalPrice()
+            val totalItems = ChartManager.getTotalItems()
+            val firstItem = ChartManager.getCartItems().firstOrNull()
+
+            if (totalItems == 0){
+                Toast.makeText(requireContext(), "Keranjang masih Kosong", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            if (firstItem != null){
+                val nama = firstItem.name
+                val subtitle = firstItem.desc
+                val unitPrice = "Rp.${firstItem.price}"
+                val totalPriceText = "Rp.$totalPrice"
+
+
+                val order = HistoryModel(
+                    title = nama,
+                    subtitle = subtitle,
+                    unitPrice = unitPrice,
+                    totalPrice = totalPriceText,
+                    status = "Selesai",
+                    image = firstItem.image
+                )
+                HistoryManager.addOrder(order)
+            }
 
             ChartManager.clear()
+            adapter.notifyDataSetChanged()
+            updateTotal(txtTotalPrice, txtTotalItems)
 
-            val intentPembayaranBerhasil = Intent(requireContext(), Pembayaran_Berhasil::class.java)
+            val intentPembayaranBerhasil = Intent(
+                requireContext(), Pembayaran_Berhasil::class.java).apply {
+                putExtra("EXTRA_TOTAL_PRICE", totalPrice)
+                putExtra("EXTRA_TOTAL_ITEMS", totalItems)
+                putExtra("EXTRA_NAMA_ITEM", firstItem?.name?: "")
+            }
             startActivity(intentPembayaranBerhasil)
 
             Toast.makeText(requireContext(), "Pembelian Berhasil Cuyyy", Toast.LENGTH_SHORT).show()

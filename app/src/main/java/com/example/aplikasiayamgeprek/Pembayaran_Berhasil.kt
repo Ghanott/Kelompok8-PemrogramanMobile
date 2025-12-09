@@ -3,6 +3,7 @@ package com.example.aplikasiayamgeprek
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,6 +21,21 @@ class Pembayaran_Berhasil : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+        val totalPrice = intent.getIntExtra("EXTRA_TOTAL_PRICE", 0)
+        val totalItems = intent.getIntExtra("EXTRA_TOTAL_ITEMS", 0)
+        val namaItem = intent.getStringExtra("EXTRA_NAMA_ITEM") ?: ""
+
+
+        val tvMenuName = findViewById<TextView>(R.id.tvMenuName)
+        val tvTotalItem = findViewById<TextView>(R.id.tvTotalItem)
+        val tvTotalPrice = findViewById<TextView>(R.id.tvTotalPrice)
+
+
+        tvMenuName.text = namaItem
+        tvTotalItem.text = "Total item: $totalItems"
+        tvTotalPrice.text = "Total: Rp. $totalPrice"
 
         val btnKembali = findViewById<Button>(R.id.btnContinue)
 
