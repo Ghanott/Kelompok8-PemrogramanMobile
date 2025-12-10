@@ -37,7 +37,16 @@ class HistoryFragment : Fragment() {
 
         val dataHistory = HistoryManager.getHistory()
 
-        historyAdapter = HistoryAdapter(dataHistory) { order ->
+        historyAdapter = HistoryAdapter(dataHistory) { HistoryItem ->
+            val menu = MenuModel(
+                name = HistoryItem.title,
+                price = HistoryItem.unitPrice,
+                description = HistoryItem.subtitle,
+                image = HistoryItem.image,
+                category = ""
+            )
+            val bottomSheet = MenuDetailButtomSheet.newInstance(menu)
+            bottomSheet.show(childFragmentManager, "MenuDetail")
 
         }
 
